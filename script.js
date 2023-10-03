@@ -265,3 +265,40 @@ function validatePart2() {
 }
 
 
+function addAnimals() {
+    let animalCount = parseInt(document.getElementById('animalCount').value);
+    if (animalCount && animalCount > 0) {
+        // Add fields dynamically for each animal in #animalDetails
+        let animalDetails = document.getElementById('animalDetails');
+        animalDetails.innerHTML = '';
+
+        for (let index = 0; index < animalCount; index++) {
+            let innerFormHTML = `
+            <div class="singleAnimal${index}">
+                        
+                        <!-- What is the type of animal? -->
+                        <div class="form-group">
+                            <label for="animalType${index}">What is the type of animal?</label>
+                            <select id="animalType${index}" name="animalType${index}">
+                                <option value="dog">dog</option>
+                                <option value="cat">cat</option>
+                                <option value="bird">bird</option>
+                                <option value="fish">fish</option>
+                                <option value="reptile">reptile</option>
+                                <option value="other">other</option>
+                            </select>
+                            <input type="text" id="animalTypeOther${index}" name="animalTypeOther${index}">
+                        </div>
+                        <!-- How many of this type of animal are present? -->
+                        <div class="form-group">
+                            <label for="animalTypeCount${index}">How many of this type of animal are present?</label>
+                            <input type="number" id="animalTypeCount${index}" name="animalTypeCount${index}" value="0">
+                        </div>
+                    </div>
+                `;
+            animalDetails.innerHTML += innerFormHTML;
+        }
+    } else {
+        alert('Please enter a valid number of animals.');
+    }
+}
