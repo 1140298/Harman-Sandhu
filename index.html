@@ -16,6 +16,34 @@
     </header>
 
     <form method="POST" action="https://tau.usq.edu.au/courses/CSC2406/reflect.php" id="censusForm">
+        <!-- Part 0: Address of the dwelling -->
+        <section id="part0">
+            <div style="background-color: #fac08e;">
+                <h2>Part 0: Address of the dwelling</h2>
+                <label for="aptNumber">Apartment Number</label>
+                <input type="number" id="aptNumber" name="aptNumber" required>
+                <label for="streetNumber">Street Number</label>
+                <input type="number" id="streetNumber" name="streetNumber" required>
+                <label for="streetName">Street Name</label>
+                <input type="text" id="streetName" name="streetName" required>
+                <label for="suburb">Suburb/city</label>
+                <input type="text" id="suburb" name="suburb" required>
+                <label for="suburb">State</label>
+                <select id="state" name="state" required>
+                    <option value="QLD">QLD</option>
+                    <option value="NSW">NSW</option>
+                    <option value="VIC">VIC</option>
+                    <option value="TAS">TAS</option>
+                    <option value="SA">SA</option>
+                    <option value="WA">WA</option>
+                    <option value="NT">NT</option>
+                    <option value="ACT">ACT</option>
+                </select>
+                <label for="postcode">Postcode</label>
+                <input type="number" id="postcode" name="postcode" required>
+            </div>
+            <button type="button" onclick="validatePart0()">Next</button>
+        </section>
         <!-- Part I: People in the Dwelling -->
         <section id="part1">
             <div style="background-color: #fac08e;">

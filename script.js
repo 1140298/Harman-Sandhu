@@ -10,5 +10,3 @@ function validatePart1() {
         alert('Please enter a valid number of people.');
     }
 }
-
-
