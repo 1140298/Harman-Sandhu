@@ -152,5 +152,76 @@ function addPeople() {
 
 // function to validate Part 1
 function validatePart1() {
-    // todo: validate all fields
+    let peopleCount = parseInt(document.getElementById('peopleCount').value);
+    let errorIndex = -1;
+
+    for (let index = 0; index < peopleCount; index++) {
+        let givenName = document.getElementById(`givenName${index}`).value.trim();
+        let familyName = document.getElementById(`familyName${index}`).value.trim();
+        let gender = document.querySelector(`input[name="gender${index}"]:checked`);
+        let dob = document.getElementById(`dob${index}`).value.trim();
+        let countryOfBirth = document.getElementById(`countryOfBirth${index}`).value.trim();
+        let countryOfBirthOther = document.getElementById(`countryOfBirth${index}Other`).value.trim();
+        let yearOfArrival = document.getElementById(`yearOfArrival${index}`).value.trim();
+        let australianCitizen = document.querySelector(`input[name="australianCitizen${index}"]:checked`);
+        let languageOtherThanEnglish = document.getElementById(`languageOtherThanEnglish${index}`).value.trim();
+        let languageOtherThanEnglishOther = document.getElementById(`languageOtherThanEnglish${index}Other`).value.trim();
+        let englishSpeaking = document.getElementById(`englishSpeaking${index}`).value.trim();
+        let highestYearOfSecondarySchool = document.getElementById(`highestYearOfSecondarySchool${index}`).value.trim();
+        let highestQualification = document.getElementById(`highestQualification${index}`).value.trim();
+        let highestQualificationOther = document.getElementById(`highestQualification${index}Other`).value.trim();
+        let mainFieldOfStudy = document.getElementById(`mainFieldOfStudy${index}`).value.trim();
+
+        // Check if all fields are filled
+        if (!givenName || !familyName || !gender || !dob || !countryOfBirth || !yearOfArrival || !australianCitizen || !languageOtherThanEnglish || !englishSpeaking || !highestYearOfSecondarySchool || !highestQualification || !mainFieldOfStudy) {
+            errorIndex = index;
+            break;
+        }
+
+        // Check for valid values wherever applicable
+        let currentYear = new Date().getFullYear();
+        let dobYear = new Date(dob).getFullYear();
+        let arrivalYear = parseInt(yearOfArrival);
+
+        // Validate dob
+        if (isNaN(dobYear) || dobYear > currentYear || dobYear < 1900) {
+            errorIndex = index;
+            break;
+        }
+
+        // Validate yearOfArrival
+        if (isNaN(arrivalYear) || arrivalYear > currentYear || arrivalYear < 1900) {
+            errorIndex = index;
+            break;
+        }
+
+        // Check if dob year is not greater than year of arrival
+        if (dobYear > arrivalYear) {
+            errorIndex = index;
+            break;
+        }
+
+        // Check for other fields filled only if "other" selected otherwise ignored
+        if (countryOfBirth === "Other" && !countryOfBirthOther) {
+            errorIndex = index;
+            break;
+        }
+        if (languageOtherThanEnglish === "Other" && !languageOtherThanEnglishOther) {
+            errorIndex = index;
+            break;
+        }
+        if (highestQualification === "Other" && !highestQualificationOther) {
+            errorIndex = index;
+            break;
+        }
+    }
+
+    if (errorIndex !== -1) {
+        // Alert that this person has incomplete data
+        alert(`Person ${errorIndex + 1} has incomplete or invalid data. Please review and correct.`);
+    } else {
+        // If no errors, proceed to the next section
+        document.getElementById('part1').style.display = 'none';
+        document.getElementById('part2').style.display = 'block';
+    }
 }
