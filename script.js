@@ -302,3 +302,46 @@ function addAnimals() {
         alert('Please enter a valid number of animals.');
     }
 }
+
+function validatePart3() {
+    let animalCount = parseInt(document.getElementById('animalCount').value);
+    if (animalCount && animalCount > 0) {
+
+        let errorIndex = -1;
+        for (let index = 0; index < animalCount; index++) {
+            let animalType = document.getElementById(`animalType${index}`).value.trim();
+            let animalTypeOther = document.getElementById(`animalTypeOther${index}`).value.trim();
+            let animalTypeCount = document.getElementById(`animalTypeCount${index}`).value.trim();
+
+            // Check if all fields are filled
+            if (!animalType || !animalTypeCount) {
+                errorIndex = index;
+                break;
+            }
+
+            // Check for other fields filled only if "other" selected otherwise ignored
+            if (animalType === "other" && !animalTypeOther) {
+                errorIndex = index;
+                break;
+            }
+
+            // check for animal type count to be valid
+            if (animalTypeCount < 1) {
+                errorIndex = index;
+                break;
+            }
+        }
+
+        if (errorIndex !== -1) {
+            // Alert that this person has incomplete data
+            alert(`Animal ${errorIndex + 1} has incomplete or invalid data. Please review and correct.`);
+        } else {
+            // If no errors, proceed to the next section
+            document.getElementById('part1').style.display = 'none';
+            document.getElementById('part2').style.display = 'block';
+        }
+
+    } else {
+        alert('Please enter a valid number of animals.');
+    }
+}
