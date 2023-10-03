@@ -167,6 +167,78 @@
             <div style="background-color: #fac08e;">
                 <h2>Part IV: Feedback</h2>
                 <!-- Questions for Part IV -->
+                <!-- For possible follow-up questions please supply a contact — phone-number or email address -->
+                <div class="form-group" id="q4-contact">
+                    <label for="contact">For possible follow-up questions please supply a contact — phone-number or email address</label>
+                    <select id="contactType" name="contactType">
+                        <option value="phone">Phone</option>
+                        <option value="email">Email</option>
+                    </select>
+                    <input type="text" id="contact" name="contact">
+                </div>
+                <!-- How difficult was this questionnaire to navigate? Very Hard, Hard, OK, Easy, Very Easy -->
+                <div class="form-group" id="q4-difficulty">
+                    <label for="difficulty">How difficult was this questionnaire to navigate?</label>
+                    <div class="radioGroup">
+                        <input type="radio" id="difficultyVeryHard" name="difficulty" value="Very Hard">
+                        <label for="difficultyVeryHard">Very Hard</label>
+                        <input type="radio" id="difficultyHard" name="difficulty" value="Hard">
+                        <label for="difficultyHard">Hard</label>
+                        <input type="radio" id="difficultyOK" name="difficulty" value="OK">
+                        <label for="difficultyOK">OK</label>
+                        <input type="radio" id="difficultyEasy" name="difficulty" value="Easy">
+                        <label for="difficultyEasy">Easy</label>
+                        <input type="radio" id="difficultyVeryEasy" name="difficulty" value="Very Easy">
+                        <label for="difficultyVeryEasy">Very Easy</label>
+                    </div>
+                </div>
+                <!-- Where the input requirements of each question easy to follow? Very confusing, Confusing, OK, Clear, Very Clear -->
+                <div class="form-group" id="q4-inputRequirements">
+                    <label for="inputRequirements">Where the input requirements of each question easy to follow?</label>
+                    <div class="radioGroup">
+                        <input type="radio" id="inputRequirementsVeryConfusing" name="inputRequirements" value="Very Confusing">
+                        <label for="inputRequirementsVeryConfusing">Very Confusing</label>
+                        <input type="radio" id="inputRequirementsConfusing" name="inputRequirements" value="Confusing">
+                        <label for="inputRequirementsConfusing">Confusing</label>
+                        <input type="radio" id="inputRequirementsOK" name="inputRequirements" value="OK">
+                        <label for="inputRequirementsOK">OK</label>
+                        <input type="radio" id="inputRequirementsClear" name="inputRequirements" value="Clear">
+                        <label for="inputRequirementsClear">Clear</label>
+                        <input type="radio" id="inputRequirementsVeryClear" name="inputRequirements" value="Very Clear">
+                        <label for="inputRequirementsVeryClear">Very Clear</label>
+                    </div>
+                </div>
+                <!-- Did you need to use the Help? Very Often, Often, Occasionally, Never -->
+                <div class="form-group" id="q4-help">
+                    <label for="help">Did you need to use the Help?</label>
+                    <div class="radioGroup">
+                        <input type="radio" id="helpVeryOften" name="help" value="Very Often">
+                        <label for="helpVeryOften">Very Often</label>
+                        <input type="radio" id="helpOften" name="help" value="Often">
+                        <label for="helpOften">Often</label>
+                        <input type="radio" id="helpOccasionally" name="help" value="Occasionally">
+                        <label for="helpOccasionally">Occasionally</label>
+                        <input type="radio" id="helpNever" name="help" value="Never">
+                        <label for="helpNever">Never</label>
+                    </div>
+                </div>
+                <!-- Did you find the help useful? Yes, No, Did not use it -->
+                <div class="form-group" id="q4-helpUseful">
+                    <label for="helpUseful">Did you find the help useful?</label>
+                    <div class="radioGroup">
+                        <input type="radio" id="helpUsefulYes" name="helpUseful" value="Yes">
+                        <label for="helpUsefulYes">Yes</label>
+                        <input type="radio" id="helpUsefulNo" name="helpUseful" value="No">
+                        <label for="helpUsefulNo">No</label>
+                        <input type="radio" id="helpUsefulDidNotUse" name="helpUseful" value="Did not use it">
+                        <label for="helpUsefulDidNotUse">Did not use it</label>
+                    </div>
+                </div>                
+                <!-- Any other comments you would like to make? -->
+                <div class="form-group" id="q4-comments">
+                    <label for="comments">Any other comments you would like to make?</label>
+                    <textarea id="comments" name="comments" rows="4" cols="50"></textarea>
+                </div>
             </div>
             <input type="submit" value="Submit">
         </section>
