@@ -345,3 +345,34 @@ function validatePart3() {
         alert('Please enter a valid number of animals.');
     }
 }
+
+function validatePart4() {
+    // prevent form submmission
+    preventDefault();
+
+    let contactType = document.getElementById('contactType').value.trim();
+    let contact = document.getElementById('contact').value.trim();
+    let difficulty = document.querySelector('input[name="difficulty"]:checked');
+    let inputRequirements = document.querySelector('input[name="inputRequirements"]:checked');
+    let help = document.querySelector('input[name="help"]:checked');
+    let helpUseful = document.querySelector('input[name="helpUseful"]:checked');
+    let comments = document.getElementById('comments').value.trim();
+
+    // Check if all fields are filled
+    if (!contactType || !contact || !difficulty || !inputRequirements || !help || !helpUseful || !comments) {
+        alert('Please fill in all the required feedback fields.');
+    } else {
+
+        // check if contact is valid
+        if (contactType === 'phone' && contact.length != 10) {
+            alert('Please enter a valid phone number.');
+            return;
+        } else if (contactType === 'email' && !contact.includes('@') && !contact.includes('.')) {
+            alert('Please enter a valid email address.');
+            return;
+        }
+
+        // submit form
+        document.getElementById('surveyForm').submit();
+    }
+}
