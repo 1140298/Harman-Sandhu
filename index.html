@@ -163,8 +163,12 @@
                 <div class="form-group" id="q3-animalCount">
                     <label for="animalCount">How many types of animal on the census night were housed at or in association with the dwelling?</label>
                     <input type="number" id="animalCount" name="animalCount" value="0">
+                    <button type="button" onclick="addAnimals()">Confirm</button>
                 </div>
                 <!-- Will be dynamically added for each type of animal -->
+                <div id="animalDetails">
+                    <!-- Will be dynamically added for each type of animal -->
+                </div>
             </div>
             <button type="button" onclick="validatePart3()">Next</button>
         </section>
