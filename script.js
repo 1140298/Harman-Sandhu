@@ -225,3 +225,43 @@ function validatePart1() {
         document.getElementById('part2').style.display = 'block';
     }
 }
+
+function validatePart2() {
+    let dwellingType = document.getElementById('dwellingType').value.trim();
+    let dwellingOwnership = document.getElementById('dwellingOwnership').value.trim();
+    let energySource = document.getElementById('energySource').value.trim();
+    let internetAccess = document.getElementById('internetAccess').value.trim();
+    let internetDownload = document.getElementById('internetDownload').value.trim();
+    let bedroomCount = document.getElementById('bedroomCount').value.trim();
+    let electricVehicle = document.querySelector('input[name="electricVehicle"]:checked');
+    let electricVehicleType = document.getElementById('electricVehicleType').value.trim();
+
+    // Check if all fields are filled
+    if (!dwellingType || !dwellingOwnership || !energySource || !internetAccess || !internetDownload || !bedroomCount || !electricVehicle) {
+        alert('Please fill in all the required fields.');
+    } else {
+        // check if internetDownload is valid
+        if (internetDownload < 0) {
+            alert('Please enter a valid monthly internet download.');
+            return;
+        } 
+
+        // check if bedroomCount is valid
+        if (bedroomCount < 1) {
+            alert('Please enter a valid number of bedrooms.');
+            return;
+        }
+
+        // check if electricVehicleType is valid
+        if (electricVehicle.value === 'yes' && !electricVehicleType) {
+            alert('Please enter a valid electric vehicle type.');
+            return;
+        }
+
+        // Hide Part 2 and Show Part 3        
+        document.getElementById('part2').style.display = 'none';
+        document.getElementById('part3').style.display = 'block';
+    }
+}
+
+
