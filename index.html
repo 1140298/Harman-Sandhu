@@ -60,6 +60,89 @@
             <div style="background-color: #fac08e;">
                 <h2>Part II: The Dwelling</h2>
                 <!-- Questions for Part II -->
+                <!-- Type of Dwelling: Detached House, Semi-detached House, Apartment, Retirement village, Caravan, Houseboat, Boat, Tent, Other -->
+                <div class="form-group" id="q2-dwellingType">
+                    <label for="dwellingType">Type of Dwelling</label>
+                    <select id="dwellingType" name="dwellingType">
+                        <option value="Detached House">Detached House</option>
+                        <option value="Semi-detached House">Semi-detached House</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="Retirement village">Retirement village</option>
+                        <option value="Caravan">Caravan</option>
+                        <option value="Houseboat">Houseboat</option>
+                        <option value="Boat">Boat</option>
+                        <option value="Tent">Tent</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                <!-- Is this dwelling: Owned outright, Owned with Mortgage, Rented, Rent-free, Life Tenure Scheme, Other -->
+                <div class="form-group" id="q2-dwellingOwnership">
+                    <label for="dwellingOwnership">Is this dwelling</label>
+                    <select id="dwellingOwnership" name="dwellingOwnership">
+                        <option value="Owned outright">Owned outright</option>
+                        <option value="Owned with Mortgage">Owned with Mortgage</option>
+                        <option value="Rented">Rented</option>
+                        <option value="Rent-free">Rent-free</option>
+                        <option value="Life Tenure Scheme">Life Tenure Scheme</option>
+                        <option value="Other">Other</option>
+                    </select> 
+                </div>
+                <!-- Sources of energy for the dwelling: Mains electricity, Photovoltaic Panels, Battery, Gas, No power source -->
+                <div class="form-group" id="q2-energySource">
+                    <label for="energySource">Sources of energy for the dwelling</label>
+                    <select id="energySource" name="energySource">
+                        <option value="Mains electricity">Mains electricity</option>
+                        <option value="Photovoltaic Panels">Photovoltaic Panels</option>
+                        <option value="Battery">Battery</option>
+                        <option value="Gas">Gas</option>
+                        <option value="No power source">No power source</option>
+                    </select>  
+                </div>
+                <!-- Internet Access for the dwelling: fibre to the house, fibre to the curb, fibre to the node, fixed wireless, ADSL, Mobile Broadband, No Internet -->
+                <div class="form-group" id="q2-internetAccess">
+                    <label for="internetAccess">Internet Access for the dwelling</label>
+                    <select id="internetAccess" name="internetAccess">
+                        <option value="fibre to the house">fibre to the house</option>
+                        <option value="fibre to the curb">fibre to the curb</option>
+                        <option value="fibre to the node">fibre to the node</option>
+                        <option value="fixed wireless">fixed wireless</option>
+                        <option value="ADSL">ADSL</option>
+                        <option value="Mobile Broadband">Mobile Broadband</option>
+                        <option value="No Internet">No Internet</option>
+                    </select>
+                </div>
+                <!-- Average monthly internet download (in GB)? -->
+                <div class="form-group" id="q2-internetDownload">
+                    <label for="internetDownload">Average monthly internet download (in GB)?</label>
+                    <input type="number" id="internetDownload" name="internetDownload" value="0">
+                </div>  
+                <!-- How Many Bedrooms in the dwelling? -->
+                <div class="form-group" id="q2-bedroomCount">
+                    <label for="bedroomCount">How Many Bedrooms in the dwelling?</label>
+                    <input type="number" id="bedroomCount" name="bedroomCount" value="1">
+                </div>
+                <!-- Are there any electric vehicles garaged at the dwelling? -->
+                <div class="form-group" id="q2-electricVehicle">
+                    <label for="electricVehicle">Are there any electric vehicles garaged at the dwelling?</label>
+                    <input type="radio" id="electricVehicleYes" name="electricVehicle" value="yes">
+                    <label for="electricVehicleYes">Yes</label>
+                    <input type="radio" id="electricVehicleNo" name="electricVehicle" value="no">
+                    <label for="electricVehicleNo">No</label>
+                </div>
+                <!-- If yes: What type: car, hybrid-car, SUV, hybrid-SUV, truck, hybrid-truck, scooter, motorcycle -->
+                <div class="form-group" id="q2-electricVehicleType">
+                    <label for="electricVehicleType">If yes: What type</label>
+                    <select id="electricVehicleType" name="electricVehicleType">
+                        <option value="car">car</option>
+                        <option value="hybrid-car">hybrid-car</option>
+                        <option value="SUV">SUV</option>
+                        <option value="hybrid-SUV">hybrid-SUV</option>
+                        <option value="truck">truck</option>
+                        <option value="hybrid-truck">hybrid-truck</option>
+                        <option value="scooter">scooter</option>
+                        <option value="motorcycle">motorcycle</option>
+                    </select>
+                </div>
             </div>
             <button type="button" onclick="validatePart2()">Next</button>
         </section>
@@ -69,6 +152,12 @@
             <div style="background-color: #fac08e;">
                 <h2>Part III: Animals</h2>
                 <!-- Questions for Part III -->
+                <!-- How many types of animal on the census night were housed at or in association with the dwelling? -->
+                <div class="form-group" id="q3-animalCount">
+                    <label for="animalCount">How many types of animal on the census night were housed at or in association with the dwelling?</label>
+                    <input type="number" id="animalCount" name="animalCount" value="0">
+                </div>
+                <!-- Will be dynamically added for each type of animal -->
             </div>
             <button type="button" onclick="validatePart3()">Next</button>
         </section>
