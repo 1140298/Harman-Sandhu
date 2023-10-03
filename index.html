@@ -48,9 +48,16 @@
         <section id="part1">
             <div style="background-color: #fac08e;">
                 <h2>Part I: People in the Dwelling</h2>
-                <label for="peopleCount">How many people spent the census night at the dwelling?</label>
-                <input type="number" id="peopleCount" name="peopleCount">
+                <div class="form-group">
+                    <label for="peopleCount">How many people spent the census night at the dwelling?</label>
+                    <input type="number" id="peopleCount" name="peopleCount">
+                    <button type="button" onclick="addPeople()">Confirm</button>
+                </div>
+
                 <!-- Individual details will be dynamically added based on the number provided -->
+                <div id="peopleDetails">
+                    <!-- Individual details will be dynamically added here -->
+                </div>
             </div>
             <button type="button" onclick="validatePart1()">Next</button>
         </section>
