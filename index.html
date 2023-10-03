@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Australian Census Questionnaire</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+
+<body style="background-color: #fcd6b5;">
+    <header>
+        <img src="ABS_logo.png" alt="ABS Logo">
+    </header>
+
+    <form method="POST" action="https://tau.usq.edu.au/courses/CSC2406/reflect.php" id="censusForm">
+        <!-- Part I: People in the Dwelling -->
+        <section id="part1">
+            <div style="background-color: #fac08e;">
+                <h2>Part I: People in the Dwelling</h2>
+                <label for="peopleCount">How many people spent the census night at the dwelling?</label>
+                <input type="number" id="peopleCount" name="peopleCount">
+                <!-- Individual details will be dynamically added based on the number provided -->
+            </div>
+            <button type="button" onclick="validatePart1()">Next</button>
+        </section>
+
+        <!-- Part II: The Dwelling -->
+        <section id="part2" style="display: none;">
+            <div style="background-color: #fac08e;">
+                <h2>Part II: The Dwelling</h2>
+                <!-- Questions for Part II -->
+            </div>
+            <button type="button" onclick="validatePart2()">Next</button>
+        </section>
+
+        <!-- Part III: Animals -->
+        <section id="part3" style="display: none;">
+            <div style="background-color: #fac08e;">
+                <h2>Part III: Animals</h2>
+                <!-- Questions for Part III -->
+            </div>
+            <button type="button" onclick="validatePart3()">Next</button>
+        </section>
+
+        <!-- Part IV: Feedback -->
+        <section id="part4" style="display: none;">
+            <div style="background-color: #fac08e;">
+                <h2>Part IV: Feedback</h2>
+                <!-- Questions for Part IV -->
+            </div>
+            <input type="submit" value="Submit">
+        </section>
+    </form>
+
+    <!-- Help Popup -->
+    <div id="helpPopup" style="display: none;">
+        <!-- Help content will be dynamically added here based on the section -->
+    </div>
+</body>
+
+</html>
